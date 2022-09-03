@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>andre-sum</title>
+    <link rel="icon" href="icon/calc icon.png">
+    <link rel="stylesheet" href="css/calculadora.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="grid grid-template-areas">
+            <input disabled id="input-value" class="display">
+
+            <button onclick="limpar()" class="botao clear button-operations">AC</button>
+            <button onclick="inverteValor()" class="botao plus-minus button-operations">+/-</button>
+            <button onclick="porcentagem()" class="botao porcentagem button-operations">%</button>
+            <button onclick="insereValor('/')" class="botao buttonision button-operations-right">/</button>
+
+            <button onclick="insereValor('7')" class="botao seven button-numbers">7</button>
+            <button onclick="insereValor('8')" class="botao eight button-numbers">8</button>
+            <button onclick="insereValor('9')" class="botao nine button-numbers">9</button>
+            <button onclick="insereValor('*')" class="botao multiplication button-operations-right">x</button>
+
+            <button onclick="insereValor('4')" class="botao four button-numbers">4</button>
+            <button onclick="insereValor('5')" class="botao five button-numbers">5</button>
+            <button onclick="insereValor('6')" class="botao six button-numbers">6</button>
+            <button onclick="insereValor('-')" class="botao minus button-operations-right">-</button>
+
+            <button onclick="insereValor('1')" class="botao one button-numbers">1</button>
+            <button onclick="insereValor('2')" class="botao two button-numbers">2</button>
+            <button onclick="insereValor('3')" class="botao three button-numbers">3</button>
+            <button onclick="insereValor('+')" class="botao plus button-operations-right">+</button>
+
+            <button onclick="insereValor('0')" class="botao zero button-numbers">0</button>
+            <button onclick="insereValor('.')" class="botao point button-numbers">,</button>
+            <button onclick="calcular()" class="botao equal button-operations-right">=</button>
+        </section>
+    </div>
+</body>
+<script>
+    function insereValor(num) {
+        input = document.getElementById('input-value').value
+        document.getElementById('input-value').value = input + num
+    }
+    function calcular() {
+        input = document.getElementById('input-value').value
+
+        document.getElementById('input-value').value = eval(input)
+    }
+    function limpar() {
+
+        document.getElementById('input-value').value = " "
+    }
+    function inverteValor() {
+        calcular()
+        input = document.getElementById('input-value').value
+        document.getElementById('input-value').value = input * -1
+    }
+    function porcentagem() {
+        input = document.getElementById('input-value').value
+        document.getElementById('input-value').value = input + sum
+    }
+</script>
+
+</html>
